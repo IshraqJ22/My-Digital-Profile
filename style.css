@@ -1,0 +1,586 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(135deg, #f0f0f0, #d9d9d9);
+  color: #333333;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensure the body takes the full viewport height */
+}
+
+/* Adjust centering for the index page form */
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align content to the top */
+  min-height: 100vh; /* Ensure the container takes the full viewport height */
+  padding-top: 20px; /* Add a small padding for spacing */
+}
+
+.cv-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #4cafaa;
+  font-size: 2.5em;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Registration form styling */
+form {
+  max-width: 400px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 0 auto; /* Center horizontally */
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+form input[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+form input[type="number"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+form button[name="logout"],
+form button[onclick="logout()"] {
+  background-color: #dc3545;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button[name="logout"]:hover,
+form button[onclick="logout()"]:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+/* Reset form spacing for user page buttons */
+form[action="index.php"] {
+  border: 1px solid #dddddd; /* Add a light border */
+  padding: 20px; /* Add padding for spacing */
+  border-radius: 8px; /* Add rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Ensure buttons inside forms are aligned properly */
+form div {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  border: none; /* Ensure no borders are applied */
+  padding: 0; /* Remove any padding */
+  margin: 0; /* Remove any margin */
+}
+
+form input[type="submit"],
+form button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form input[type="submit"]:hover,
+form button:hover {
+  transform: translateY(-2px);
+}
+
+div {
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+/* Submit button styling */
+input[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Clear button styling */
+button[name="logout"],
+button[onclick="logout()"] {
+  background-color: #dc3545;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[name="logout"]:hover,
+button[onclick="logout()"]:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+/* Back to Home button styling */
+a button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  text-align: center;
+  padding: 0;
+}
+
+a button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  color: #4cafaa;
+  border-bottom: 2px solid #4cafaa;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+.contact-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contact-info a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Ensure consistent button sizes and styles for all buttons */
+button.facebook-button,
+button.instagram-button,
+button.linkedin-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  overflow: hidden;
+  text-align: center;
+}
+
+button.facebook-button {
+  background-color: #3b5998;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.facebook-button:hover {
+  background-color: #2d4373;
+  transform: translateY(-2px);
+}
+
+button.facebook-button img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+button.instagram-button {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+button.instagram-button:hover {
+  transform: translateY(-2px);
+}
+
+button.instagram-button img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+button.linkedin-button {
+  background-color: #0077b5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.linkedin-button:hover {
+  background-color: #005582;
+  transform: translateY(-2px);
+}
+
+button.linkedin-button img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.facebook-button,
+.instagram-button,
+.linkedin-button {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+}
+
+.facebook-button:hover,
+.instagram-button:hover,
+.linkedin-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* View My CV button styling */
+button.cv-button,
+button.calc-button {
+  background-color: #17a2b8;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.cv-button:hover,
+button.calc-button:hover {
+  background-color: #138496;
+  transform: translateY(-2px);
+}
+
+/* Back to Homepage button styling */
+button.calc-button {
+  background-color: #ffc107;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.calc-button:hover {
+  background-color: #e0a800;
+  transform: translateY(-2px);
+}
+
+/* Profile container styling */
+.profile-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Profile details styling */
+.profile-details p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+/* Styling for the profile image */
+.profile-details img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* Styling for the CV download link */
+.profile-details a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.profile-details a:hover {
+  text-decoration: underline;
+}
+
+/* Styling for labels */
+label {
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+/* Styling for file upload inputs */
+input[type="file"] {
+  display: block;
+  margin: 10px 0 20px;
+  font-size: 1em;
+}
+
+/* Styling for buttons */
+button.calc-button,
+button.cv-button {
+  background-color: #17a2b8;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.calc-button:hover,
+button.cv-button:hover {
+  background-color: #138496;
+  transform: translateY(-2px);
+}
+
+/* Profile actions styling */
+.profile-actions {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: center; /* Center align buttons */
+  gap: 15px; /* Add spacing between buttons */
+}
+
+.profile-actions a,
+.profile-actions form {
+  display: inline-block;
+  width: 100%; /* Make buttons take full width */
+  max-width: 300px; /* Limit button width */
+}
+
+button.cv-button,
+button.calc-button,
+button.logout-button {
+  width: 100%; /* Ensure buttons take full width of their container */
+  text-align: center;
+}
+
+/* Logout button styling */
+.logout-button {
+  background-color: #dc3545;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+/* Remove white borders (outline) from buttons */
+button {
+  outline: none;
+}
+
+/* Remove User button styling */
+.remove-user-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 16px; /* Smaller padding */
+  border-radius: 5px;
+  font-size: 0.9em; /* Slightly smaller font size */
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.remove-user-button:hover {
+  background-color: #e60000;
+  transform: translateY(-2px);
+}
