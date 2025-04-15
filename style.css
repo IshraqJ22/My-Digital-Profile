@@ -1,0 +1,946 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(
+    135deg,
+    rgba(217, 217, 217, 0.8),
+    rgba(240, 240, 240, 0.8)
+  ) !important; /* Ensure this background is applied */
+  backdrop-filter: blur(10px) !important; /* Ensure blur effect is applied */
+  color: #333333; /* Darker text for contrast */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Adjust centering for the index page form */
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 20px;
+}
+
+.cv-container {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ) !important; /* Ensure glass effect is applied */
+  backdrop-filter: blur(10px) !important; /* Ensure blur effect is applied */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+h1,
+h2 {
+  color: #222222; /* Darker headings for better readability */
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5); /* Subtle light shadow */
+}
+
+/* Registration form styling */
+form {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ) !important; /* Ensure glass effect is applied */
+  backdrop-filter: blur(10px) !important; /* Ensure blur effect is applied */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  padding: 20px;
+  max-width: 600px; /* Reduce form width for better alignment */
+  width: 90%; /* Ensure responsiveness */
+  margin: 20px auto;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="password"],
+form input[type="file"],
+form input[type="date"] {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e6e6e6
+  ); /* Lighter button gradient */
+  color: #333333; /* Darker text for contrast */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+  width: calc(100% - 30px); /* Ensure input fields fit within the form */
+  box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+form input[type="submit"],
+form button {
+  background: linear-gradient(
+    135deg,
+    #007bff,
+    #0056b3
+  ); /* Lighter button gradient */
+  color: white; /* Darker text for contrast */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form input[type="submit"]:hover,
+form button:hover {
+  background: linear-gradient(
+    135deg,
+    #0056b3,
+    #003f7f
+  ); /* Slightly darker hover effect */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+form input[type="number"] {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e6e6e6
+  ); /* Lighter button gradient */
+  color: #333333; /* Darker text for contrast */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+form button[name="logout"],
+form button[onclick="logout()"] {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e6e6e6
+  ); /* Lighter button gradient */
+  color: #333333; /* Darker text for contrast */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+form button[name="logout"]:hover,
+form button[onclick="logout()"]:hover {
+  background: linear-gradient(
+    135deg,
+    #f2f2f2,
+    #e0e0e0
+  ); /* Slightly darker hover effect */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Reset form spacing for user page buttons */
+form[action="index.php"] {
+  border: 1px solid #dddddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure buttons inside forms are aligned properly */
+form div {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+form input[type="submit"],
+form button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form input[type="submit"]:hover,
+form button:hover {
+  transform: translateY(-2px);
+}
+
+div {
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e6e6e6
+  ); /* Lighter button gradient */
+  color: #333333; /* Darker text for contrast */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Submit button styling */
+input[type="submit"] {
+  background: linear-gradient(
+    135deg,
+    #007bff,
+    #0056b3
+  ); /* Lighter button gradient */
+  color: white; /* Darker text for contrast */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+  background: linear-gradient(
+    135deg,
+    #0056b3,
+    #003f7f
+  ); /* Slightly darker hover effect */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Clear button styling */
+button[name="logout"],
+button[onclick="logout()"] {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e6e6e6
+  ); /* Lighter button gradient */
+  color: #333333; /* Darker text for contrast */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+button[name="logout"]:hover,
+button[onclick="logout()"]:hover {
+  background: linear-gradient(
+    135deg,
+    #f2f2f2,
+    #e0e0e0
+  ); /* Slightly darker hover effect */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Back to Home button styling */
+a button {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e6e6e6
+  ); /* Lighter button gradient */
+  color: #333333; /* Darker text for contrast */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  padding: 0;
+}
+
+a button:hover {
+  background: linear-gradient(
+    135deg,
+    #f2f2f2,
+    #e0e0e0
+  ); /* Slightly darker hover effect */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+a {
+  color: #007acc; /* Brighter blue for links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #3399ff; /* Lighter blue on hover */
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  color: #ffffff; /* Bright white for headings */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  border-bottom: 2px solid #4cafaa;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+.contact-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contact-info a {
+  color: #007acc; /* Brighter blue for links */
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+contact-info a:hover {
+  color: #3399ff; /* Lighter blue on hover */
+}
+
+/* Ensure consistent button sizes and styles for all buttons */
+button.facebook-button,
+button.instagram-button,
+button.linkedin-button,
+button.github-button {
+  background: linear-gradient(135deg, #ffffff, #e6e6e6);
+  color: #333333;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 0.9em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+button.facebook-button:hover,
+button.instagram-button:hover,
+button.linkedin-button:hover,
+button.github-button:hover {
+  background: linear-gradient(135deg, #f2f2f2, #e0e0e0);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+button.facebook-button img,
+button.instagram-button img,
+button.linkedin-button img,
+button.github-button img {
+  width: 20px;
+  height: 20px;
+}
+
+/* View My CV button styling */
+button.cv-button,
+button.calc-button {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e6e6e6
+  ); /* Lighter button gradient */
+  color: #333333; /* Darker text for contrast */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+button.cv-button:hover,
+button.calc-button:hover {
+  background: linear-gradient(
+    135deg,
+    #f2f2f2,
+    #e0e0e0
+  ); /* Slightly darker hover effect */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Back to Homepage button styling */
+button.calc-button {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e6e6e6
+  ); /* Lighter button gradient */
+  color: #333333; /* Darker text for contrast */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 40px;
+}
+
+button.calc-button:hover {
+  background: linear-gradient(
+    135deg,
+    #f2f2f2,
+    #e0e0e0
+  ); /* Slightly darker hover effect */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+button.calc-button img.button-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* Profile container styling */
+.profile-container {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ) !important; /* Ensure glass effect is applied */
+  backdrop-filter: blur(10px) !important; /* Ensure blur effect is applied */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* Profile details styling */
+.profile-details p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+/* Styling for the profile image */
+.profile-details img {
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+/* Styling for the CV download link */
+.profile-details a {
+  color: #007acc; /* Brighter blue for links */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.profile-details a:hover {
+  color: #3399ff; /* Lighter blue on hover */
+}
+
+/* Styling for labels */
+label {
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+/* Styling for file upload inputs */
+input[type="file"] {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e6e6e6
+  ); /* Lighter button gradient */
+  color: #333333; /* Darker text for contrast */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: block;
+  margin: 10px 0 20px;
+}
+
+/* Styling for buttons */
+button.calc-button,
+button.cv-button {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e6e6e6
+  ); /* Lighter button gradient */
+  color: #333333; /* Darker text for contrast */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+button.calc-button:hover,
+button.cv-button:hover {
+  background: linear-gradient(
+    135deg,
+    #f2f2f2,
+    #e0e0e0
+  ); /* Slightly darker hover effect */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Profile actions styling */
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-actions a,
+.profile-actions form {
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+}
+
+button.cv-button,
+button.calc-button,
+button.logout-button {
+  width: 100%;
+  text-align: center;
+}
+
+/* Logout button styling */
+.logout-button {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e6e6e6
+  ); /* Lighter button gradient */
+  color: #333333; /* Darker text for contrast */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+  background: linear-gradient(
+    135deg,
+    #f2f2f2,
+    #e0e0e0
+  ); /* Slightly darker hover effect */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+button.logout-button {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e6e6e6
+  ); /* Lighter button gradient */
+  color: #333333; /* Darker text for contrast */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 60px;
+}
+
+button.logout-button:hover {
+  background: linear-gradient(
+    135deg,
+    #f2f2f2,
+    #e0e0e0
+  ); /* Slightly darker hover effect */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+button.logout-button img.button-logo {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+/* Remove white borders (outline) from buttons */
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+/* Remove User button styling */
+button.remove-user-button {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e6e6e6
+  ); /* Lighter button gradient */
+  color: #333333; /* Darker text for contrast */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+button.remove-user-button:hover {
+  background: linear-gradient(
+    135deg,
+    #f2f2f2,
+    #e0e0e0
+  ); /* Slightly darker hover effect */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Embedded CV iframe styling */
+.cv-iframe {
+  width: 100%;
+  height: 500px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ) !important; /* Ensure glass effect is applied */
+  backdrop-filter: blur(10px) !important; /* Ensure blur effect is applied */
+}
+
+/* Centered button styling */
+.centered-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Specific styling for the calculator button in the user profile page */
+button.calc-button {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e6e6e6
+  ); /* Lighter button gradient */
+  color: #333333; /* Darker text for contrast */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 17px;
+}
+
+button.calc-button:hover {
+  background: linear-gradient(
+    135deg,
+    #f2f2f2,
+    #e0e0e0
+  ); /* Slightly darker hover effect */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+button.calc-button img.button-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+button.facebook-button {
+  background: linear-gradient(
+    135deg,
+    #3b5998,
+    #2d4373
+  ); /* Original Facebook colors with metallic gradient */
+  color: #ffffff;
+  border: 1px solid #2d4373;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 0.9em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+button.facebook-button:hover {
+  background: linear-gradient(
+    135deg,
+    #2d4373,
+    #1e2e56
+  ); /* Darker hover effect */
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+button.instagram-button {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  ); /* Original Instagram gradient */
+  color: #ffffff;
+  border: 1px solid #cc2366;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 0.9em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+button.instagram-button:hover {
+  background: linear-gradient(
+    45deg,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888,
+    #9b1d7e
+  ); /* Adjusted hover gradient */
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+button.linkedin-button {
+  background: linear-gradient(
+    135deg,
+    #0077b5,
+    #005582
+  ); /* Original LinkedIn colors with metallic gradient */
+  color: #ffffff;
+  border: 1px solid #005582;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 0.9em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+button.linkedin-button:hover {
+  background: linear-gradient(
+    135deg,
+    #005582,
+    #003f4f
+  ); /* Darker hover effect */
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+button.github-button {
+  background: linear-gradient(
+    135deg,
+    #333333,
+    #24292e
+  ); /* Original GitHub colors with metallic gradient */
+  color: #ffffff;
+  border: 1px solid #24292e;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 0.9em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+button.github-button:hover {
+  background: linear-gradient(
+    135deg,
+    #24292e,
+    #1b1f23
+  ); /* Darker hover effect */
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+button.facebook-button img,
+button.instagram-button img,
+button.linkedin-button img,
+button.github-button img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Styling for the header with logo */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Space between logo and header text */
+  margin: 20px auto;
+  text-align: center;
+}
+
+header img.website-logo {
+  max-width: 50px; /* Adjust logo size */
+  height: auto;
+  border-radius: 5px; /* Slight rounding for a modern look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+header h1 {
+  font-size: 2.2em; /* Increase font size */
+  color: #333333; /* Darker text for better readability */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2),
+    0 1px 2px rgba(255, 255, 255, 0.5); /* Add depth with shadows */
+  font-weight: 700; /* Make the text bold */
+  letter-spacing: 1px; /* Add slight spacing between letters */
+  margin: 0;
+  text-transform: uppercase; /* Make the text uppercase for emphasis */
+}
+
+/* Styling for date input */
+input[type="date"] {
+  background: linear-gradient(135deg, #ffffff, #e6e6e6);
+  color: #333333;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+button.edit-profile-button {
+  background: linear-gradient(135deg, #4caf50, #388e3c); /* Green gradient */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.edit-profile-button:hover {
+  background: linear-gradient(
+    135deg,
+    #388e3c,
+    #2e7d32
+  ); /* Darker green hover effect */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for the Edit Profile button */
+button.edit-profile-button {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e6e6e6
+  ); /* Lighter button gradient */
+  color: #333333; /* Darker text for contrast */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%; /* Ensure consistent width with other buttons */
+  text-align: center;
+}
+
+button.edit-profile-button:hover {
+  background: linear-gradient(
+    135deg,
+    #f2f2f2,
+    #e0e0e0
+  ); /* Slightly darker hover effect */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
