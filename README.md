@@ -66,7 +66,7 @@ A PHP-based web application that allows users to register, log in, manage their 
      ```
 
 6. Test the application:
-   - Open your browser and navigate to `http://localhost/my-digital-profile/index.php`. (Put port number after localhost localhost:----/my-digital-profile)
+   - Open your browser and navigate to `http://localhost/my-digital-profile/index.php`. (Put port number after localhost. localhost:----/my-digital-profile)
 
 ---
 
