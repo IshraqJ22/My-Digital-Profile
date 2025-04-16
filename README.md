@@ -111,7 +111,7 @@ c:\Users\ituser\www\
 
 ## Technologies Used
 
-- **Frontend**: HTML, CSS
+- **Frontend**: HTML, CSS (via Bootstrap)
 - **Backend**: PHP
 - **Database**: MySQL
 
